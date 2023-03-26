@@ -25,7 +25,7 @@ public class InputDialogDemo extends JFrame implements ActionListener {
         this.getContentPane().setBackground(Color.WHITE);
         this.setResizable(false);
         JButton clickme= new JButton("click me");
-        clickme.setBounds(100,100,80,30);
+        clickme.setBounds(100,100,100,30);
         clickme.addActionListener(this);
         
         container.add(clickme);
@@ -33,19 +33,18 @@ public class InputDialogDemo extends JFrame implements ActionListener {
         this.setVisible(true);
     }
     
-    
     @Override
     public void actionPerformed(ActionEvent e) {
        int result=JOptionPane.showConfirmDialog(this,"are you sure to display");
         if(result==0){
             System.out.println("yes clicked");
+            JOptionPane.showMessageDialog(this, "yes clicked");
         }else if(result==JOptionPane.NO_OPTION){
            System.out.println("no clicked"); 
+           JOptionPane.showMessageDialog(this, "no clicked");
         }else if(result==JOptionPane.CANCEL_OPTION){
             System.out.println("Cancelled clicked");  
+            JOptionPane.showMessageDialog(this, "cancel clicked");
         }
-    
     }
-    
-    
 }

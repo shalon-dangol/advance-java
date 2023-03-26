@@ -12,6 +12,6 @@ public class SwingExamples {
 
     public static void main(String[] args) {
 
-        new InputDialogDemo();
+        new MouseEventExample();
     }
 }

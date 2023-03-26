@@ -24,12 +24,30 @@ public class TableDemo extends JFrame {
         String data[][] = {
             {"shyam","pokhara","22"},
             {"hari","lalitpur","30"},
+            {"shyam","pokhara","22"},
+            {"hari","lalitpur","30"},
+            {"shyam","pokhara","22"},
+            {"hari","lalitpur","30"},
+            {"shyam","pokhara","22"},
+            {"hari","lalitpur","30"},
+            {"shyam","pokhara","22"},
+            {"hari","lalitpur","30"},
+            {"shyam","pokhara","22"},
+            {"hari","lalitpur","30"},
+            {"shyam","pokhara","22"},
+            {"hari","lalitpur","30"},
+            {"shyam","pokhara","22"},
+            {"hari","lalitpur","30"},
+            {"shyam","pokhara","22"},
+            {"hari","lalitpur","30"},
             {"ram","ktm","21"}
     };
         
         String colName[]={"Name","Address","Age"};
         JTable table = new JTable(data, colName);
         JScrollPane scroll = new JScrollPane(table);
+        
+        
         
         container.add(scroll);
         

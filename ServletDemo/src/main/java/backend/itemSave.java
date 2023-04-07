@@ -56,7 +56,6 @@ public class itemSave extends HttpServlet {
             stat.setInt(2, itemPrice);
             stat.setInt(3, 0);
             stat.setString(4, "");
-            stat.executeUpdate();
             
             stat.executeUpdate();
             res.getWriter().println("inserted succesfully");

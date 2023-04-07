@@ -8,6 +8,10 @@
         <servlet-name>itemSave</servlet-name>
         <servlet-class>backend.itemSave</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetAllItem</servlet-name>
+        <servlet-class>backend.GetAllItem</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MyFirstServlet</servlet-name>
         <url-pattern>/firstservlet</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>itemSave</servlet-name>
         <url-pattern>/itemSave</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetAllItem</servlet-name>
+        <url-pattern>/GetAllItem</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

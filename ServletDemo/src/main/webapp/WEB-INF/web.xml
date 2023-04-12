@@ -12,6 +12,10 @@
         <servlet-name>GetAllItem</servlet-name>
         <servlet-class>backend.GetAllItem</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteItem</servlet-name>
+        <servlet-class>backend.DeleteItem</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MyFirstServlet</servlet-name>
         <url-pattern>/firstservlet</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>GetAllItem</servlet-name>
         <url-pattern>/GetAllItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteItem</servlet-name>
+        <url-pattern>/DeleteItem</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

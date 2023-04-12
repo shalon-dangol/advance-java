@@ -50,14 +50,15 @@ public class GetAllItem extends HttpServlet {
             table+="</tr>";
             
             while(result.next()){
+                String id = result.getString("id");
                 
                     table+="<tr>";
                     table+="<td>"+result.getString("id")+"</td>";
                     table+="<td>"+result.getString("name")+"</td>";
                     table+="<td>"+result.getString("price")+"</td>";
                     table+="<td>"+result.getString("stock")+"</td>";
+                    table+="<td><a onclick='return confirm(\"Are you sure to delete?\")'  href= '../DeleteItem?id="+id+"'>Delete</a></td>";
                     table+="</tr>";
-                
                 
             }
             table+="</table>";

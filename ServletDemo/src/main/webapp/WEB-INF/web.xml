@@ -16,6 +16,14 @@
         <servlet-name>DeleteItem</servlet-name>
         <servlet-class>backend.DeleteItem</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SaveUser</servlet-name>
+        <servlet-class>backend.SaveUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayUser</servlet-name>
+        <servlet-class>backend.DisplayUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MyFirstServlet</servlet-name>
         <url-pattern>/firstservlet</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>DeleteItem</servlet-name>
         <url-pattern>/DeleteItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SaveUser</servlet-name>
+        <url-pattern>/SaveUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayUser</servlet-name>
+        <url-pattern>/DisplayUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

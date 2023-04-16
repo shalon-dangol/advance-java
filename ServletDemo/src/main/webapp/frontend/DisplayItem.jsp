@@ -25,10 +25,17 @@
    
 </script>
 <body>
-    
-     <div id="table">
+   
+    <div class="main-content">
+            <div class="title">Display Item</div>
+            <div class="content">
+                 
+     <div id="table" class="display_table">
         
     </div>
+      
+            </div>
+        </div>
 </body>
    
 </html>

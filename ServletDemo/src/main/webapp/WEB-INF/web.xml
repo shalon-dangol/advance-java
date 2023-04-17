@@ -24,6 +24,22 @@
         <servlet-name>DisplayUser</servlet-name>
         <servlet-class>backend.DisplayUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CreateSession</servlet-name>
+        <servlet-class>ForSession.CreateSession</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetSession</servlet-name>
+        <servlet-class>ForSession.GetSession</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetOneItem</servlet-name>
+        <servlet-class>backend.GetOneItem</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateItem</servlet-name>
+        <servlet-class>backend.UpdateItem</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MyFirstServlet</servlet-name>
         <url-pattern>/firstservlet</url-pattern>
@@ -63,6 +79,22 @@
     <servlet-mapping>
         <servlet-name>DisplayUser</servlet-name>
         <url-pattern>/DisplayUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateSession</servlet-name>
+        <url-pattern>/CreateSession</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetSession</servlet-name>
+        <url-pattern>/GetSession</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetOneItem</servlet-name>
+        <url-pattern>/GetOneItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateItem</servlet-name>
+        <url-pattern>/UpdateItem</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

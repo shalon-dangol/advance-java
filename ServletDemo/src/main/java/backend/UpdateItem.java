@@ -21,10 +21,6 @@ import java.util.logging.Logger;
 public class UpdateItem extends HttpServlet {
 Connection con;
 
-    @Override
-    public void init() throws ServletException {
-
-    }
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

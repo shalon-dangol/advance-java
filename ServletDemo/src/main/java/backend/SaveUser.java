@@ -51,7 +51,7 @@ public class SaveUser extends HttpServlet {
             
             obj.executeUpdate();
             
-            res.getWriter().println("user inserted successfully");
+            res.getWriter().println("data inserted successfully");
             
             
         } catch (SQLException ex) {

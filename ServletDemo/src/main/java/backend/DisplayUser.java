@@ -40,14 +40,17 @@ public class DisplayUser extends HttpServlet {
               ResultSet result = stmt.executeQuery(query);
               String table="<table border='1'>";
               table+="<tr>";
-              table+="<th>ID<th>Username";
+              table+="<th>ID<th>Username<th>Status<th colspan=2>Action";
               table+="</tr>";
               
                while(result.next()){
-                
+                String id = result.getString("id");
                     table+="<tr>";
                     table+="<td>"+result.getString("id")+"</td>";
                     table+="<td>"+result.getString("username")+"</td>";
+                    table+="<td>"+result.getString("status")+"</td>";
+                    table+="<td><a onclick='return confirm(\"Are you sure to delete?\")'  href= '../SuspendUser?id="+id+"'>Suspend</a></td>";
+                    table+="<td><a onclick='return confirm(\"Are you sure to delete?\")' href= '../ActivateUser?id="+id+"'>Activate</a></td>";
                     table+="</tr>";
                 
             }

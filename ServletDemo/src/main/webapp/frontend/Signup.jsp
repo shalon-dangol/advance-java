@@ -38,7 +38,6 @@
             <form action="../SaveUser" method="post">
             <label>Username:</label><input type="text" name="username" />
             <label>Password:</label><input type="password" name="password" class="passwordField"/>
-
             <input type="submit" class="btn_success" value="Sign Up" />
              </form>
         </div>

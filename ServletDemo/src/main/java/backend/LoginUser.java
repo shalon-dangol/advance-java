@@ -8,6 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,10 +38,17 @@ Connection con;
         stmt.setString(3, status);
         ResultSet result = stmt.executeQuery();
 //        System.out.println(stmt.getUpdateCount());
-        if(!result.next()){
-            res.getWriter().println("wrong user password");
-        }else{
+        HttpSession session = req.getSession();
+        
+        
+        if(result.next()){
+            session.setAttribute("userid",result.getString("id"));
+            session.setAttribute("username",username);
+            
             res.sendRedirect("frontend/menu.jsp");
+        }else{
+            session.setAttribute("errorMsg","Either username or password is wrong");
+            res.sendRedirect("frontend/LoginForm.jsp");
         }
         
         

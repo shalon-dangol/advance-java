@@ -1,3 +1,21 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    //without using filter interface
+// String username = "";
+// if(session.getAttribute("username")!=null){ 
+// session.setAttribute("errorMsg","You are not logged in.");
+// response.sendRedirect("LoginForm.jsp");
+//    }else{
+//    username = session.getAttribute("username").toString();
+//    }
+
+
+String username="";
+if(session.getAttribute("username")!=null){
+        username = session.getAttribute("username").toString();
+    }
+  %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,8 +32,8 @@
 
         <div class="nav-bar">
             <div class="system-name">Inventory System</div>
-            <a href="logout.php"> logout</a> 
-            <div class="user">Welcome : USer </div>
+            <a href="../Logout"> logout</a> 
+            <div class="user">Welcome : <%= username%></div>
 
         </div>
         <div class="menu">

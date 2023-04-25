@@ -22,7 +22,6 @@ public class DisplayUser extends HttpServlet {
         
     @Override
     public void init() throws ServletException {
-        
         try {
             con = DBConnect.connect();
         } catch (ClassNotFoundException ex) {

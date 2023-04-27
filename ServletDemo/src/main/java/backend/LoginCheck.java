@@ -25,7 +25,6 @@ import java.io.IOException;
 
 public class LoginCheck implements Filter{
 
-
     @Override
     public void doFilter(ServletRequest sreq, ServletResponse sres, FilterChain fc) throws IOException, ServletException {
         HttpServletRequest req= (HttpServletRequest) sreq;
@@ -43,7 +42,6 @@ public class LoginCheck implements Filter{
             }else{
                 
             }
-            
             
         }
         fc.doFilter(req,res);

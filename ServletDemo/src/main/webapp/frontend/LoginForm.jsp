@@ -5,7 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     
     <style>
@@ -20,7 +20,7 @@
      
         
     </style>
-    <body style="background-image:linear-gradiant(272deg, #434343 0%, black 100%)">
+    <body>
         <div class="main-content">
             <div class="title">
                 Login User

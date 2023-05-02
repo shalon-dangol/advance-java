@@ -56,6 +56,26 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>backend.Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PurchaseItem</servlet-name>
+        <servlet-class>backend.PurchaseItem</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetItemSelectBox</servlet-name>
+        <servlet-class>backend.GetItemSelectBox</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SavePurchase</servlet-name>
+        <servlet-class>backend.SavePurchase</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CookieTest</servlet-name>
+        <servlet-class>backend.CookieTest</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SaveSales</servlet-name>
+        <servlet-class>backend.SaveSales</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MyFirstServlet</servlet-name>
         <url-pattern>/firstservlet</url-pattern>
@@ -127,6 +147,26 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PurchaseItem</servlet-name>
+        <url-pattern>/PurchaseItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetItemSelectBox</servlet-name>
+        <url-pattern>/GetItemSelectBox</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SavePurchase</servlet-name>
+        <url-pattern>/SavePurchase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CookieTest</servlet-name>
+        <url-pattern>/CookieTest</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SaveSales</servlet-name>
+        <url-pattern>/SaveSales</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

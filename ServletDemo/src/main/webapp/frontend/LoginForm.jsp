@@ -17,10 +17,25 @@
             margin: 50px auto;
             background: white;
         }
+        .passwordField{
+            box-sizing: border-box;
+			display: block;
+		    width: 100%;
+		    padding: 0.375rem 0.75rem;
+		    font-size: 1rem;
+		    line-height: 1.5;
+		    color: #495057;
+		    background-color: #fff;
+		    background-clip: padding-box;
+		    border: 1px solid #ced4da;
+		    border-radius: 0.25rem;
+		    margin-top: 8px;
+		    margin-bottom: 15px;
+        }
      
         
     </style>
-    <body>
+    <body style="background-image: linear-gradient(272deg, #434343 0%, black 100%)">
         <div class="main-content">
             <div class="title">
                 Login User

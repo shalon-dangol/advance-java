@@ -32,11 +32,12 @@ public class LoginCheck implements Filter{
         
         if(req.getServletPath().equals("/frontend/LoginForm.jsp")||req.getServletPath().equals("/LoginUser")){
             System.out.println("okay");
-            System.out.println(req.getServletPath());
+            System.out.println(req.getServletPath());   
         }else{
-            HttpSession session = req.getSession(false);
+            HttpSession session = req.getSession();
             if(session.getAttribute("username")==null){
                 session.setAttribute("errorMsg", "you are not logged in");
+                System.out.println(session.getAttribute("errorMsg"));
                 res.sendRedirect("/ServletDemo/frontend/LoginForm.jsp");
                 return;
             }else{

@@ -1,6 +1,24 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    String username = "";
+    String password = "";
+    
+    Cookie cookies[] = request.getCookies();
+    for(Cookie cookie : cookies){
+        if(cookie.getName().equals("username")){
+        System.out.println(cookie.getValue());
+        username = cookie.getValue();
+        
+    }
+    if(cookie.getName().equals("password")){
+    password = cookie.getValue();
+    
+    }
+    
+    }
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -42,9 +60,10 @@
             </div>
             <div class="content" >
              <form action="../LoginUser" method="post">
-             <label>Username:</label><input type="text" name="username" />
-            <label>Password:</label><input type="password" name="password" class="passwordField"/>
+             <label>Username:</label><input type="text" name="username" value="<%= username%>" />
+            <label>Password:</label><input type="password" name="password" class="passwordField" value="<%= password%>"/>
 
+            <input type="checkbox" name="remember"/><span>Remember User</span><br>
             <input type="submit" class="btn success" value="Login" />
         </form>
              <%

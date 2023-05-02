@@ -5,11 +5,13 @@
 package backend;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import static java.lang.System.in;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -42,6 +44,29 @@ Connection con;
         
         
         if(result.next()){
+            if(req.getParameter("remember")!=null){
+                System.out.println("checked");
+                Cookie usernameCookie = new Cookie("username",username);
+                Cookie passwordCookie = new Cookie("password",password);
+                
+                res.addCookie(usernameCookie);
+                res.addCookie(passwordCookie);
+                
+                
+            }else{
+                System.out.println("unchecked");
+                Cookie cookies[]= req.getCookies();
+                for(Cookie cookie : cookies){
+                    if(cookie.getName().equals("username")){
+                        cookie.setMaxAge(0);
+                        res.addCookie(cookie);
+                    }
+                    if(cookie.getName().equals("password")){
+                        cookie.setMaxAge(0);
+                        res.addCookie(cookie);
+                    }
+                }
+            }
             session.setAttribute("userid",result.getString("id"));
             session.setAttribute("username",username);
             

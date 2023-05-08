@@ -80,6 +80,10 @@
         <servlet-name>ViewItemPic</servlet-name>
         <servlet-class>backend.ViewItemPic</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetItemForView</servlet-name>
+        <servlet-class>backend.GetItemForView</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MyFirstServlet</servlet-name>
         <url-pattern>/firstservlet</url-pattern>
@@ -175,6 +179,10 @@
     <servlet-mapping>
         <servlet-name>ViewItemPic</servlet-name>
         <url-pattern>/ViewItemPic</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetItemForView</servlet-name>
+        <url-pattern>/GetItemForView</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

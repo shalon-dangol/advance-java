@@ -4,11 +4,17 @@
  */
 package backend;
 
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -21,6 +27,7 @@ import java.util.logging.Logger;
  *
  * @author Shalon
  */
+@MultipartConfig
 public class itemSave extends HttpServlet {
     Connection con;
     @Override
@@ -44,9 +51,12 @@ public class itemSave extends HttpServlet {
         PreparedWay(req, res);
     }
     
-    public void PreparedWay(HttpServletRequest req, HttpServletResponse res){
+    public void PreparedWay(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
         String itemName = req.getParameter("itemName");
         int itemPrice = Integer.parseInt(req.getParameter("itemPrice"));
+        Part part = req.getPart("photo");
+        String filename = part.getSubmittedFileName();
+        System.out.println(filename);
         try {
             con = DBConnect.connect();
             String query = "INSERT INTO `tbl_item`(`name`, `price`, `stock`, `photo`) VALUES (?,?,?,?)";
@@ -55,9 +65,20 @@ public class itemSave extends HttpServlet {
             stat.setString(1, itemName);
             stat.setInt(2, itemPrice);
             stat.setInt(3, 0);
-            stat.setString(4, "");
+            stat.setString(4, filename);
             
-            stat.executeUpdate();
+            //uploading photo
+            InputStream is = part.getInputStream();
+            byte data[] = new byte[is.available()];
+            is.read(data);
+            is.close();
+            String path = getServletConfig().getServletContext().getRealPath("/")+"frontend"+File.separator+"uploads"+File.separator+filename;
+            System.out.println(path);
+            FileOutputStream fileout = new FileOutputStream(path);
+            fileout.write(data);
+            fileout.close();
+            
+             stat.executeUpdate();
             res.getWriter().println("inserted succesfully");
                     
                     

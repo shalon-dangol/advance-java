@@ -30,7 +30,7 @@ public class LoginCheck implements Filter{
         HttpServletRequest req= (HttpServletRequest) sreq;
         HttpServletResponse res= (HttpServletResponse) sres;
         
-        if(req.getServletPath().equals("/frontend/LoginForm.jsp")||req.getServletPath().equals("/LoginUser")){
+        if(req.getServletPath().equals("/frontend/LoginForm.jsp")||req.getServletPath().equals("/LoginUser")||req.getServletPath().equals("/frontend/style.css")){
             System.out.println("okay");
             System.out.println(req.getServletPath());   
         }else{
